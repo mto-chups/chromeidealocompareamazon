@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "Amazon Price Checker",
+    "version": "1.0",
+    "description": "Affiche le prix d'un produit sur Amazon quand on visite la page Idealo.",
+    "permissions": [
+      "activeTab",
+      "storage",
+      "scripting",
+      "https://www.amazon.fr/*",
+      "http://localhost:3000/*" 
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.idealo.fr/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
